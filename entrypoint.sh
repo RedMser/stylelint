@@ -10,7 +10,7 @@ if [ ! -z "${CONFIG_PATH}" ]; then
   configPath=$CONFIG_PATH
 fi
 if [ ! -z "${INDENT_SPACES}" ]; then
-  indent_spaces=$INDENT_SPACES
+  indentSpaces=$INDENT_SPACES
 fi
 if [ ! -z "${PATTERN}" ]; then
   pattern=$PATTERN
@@ -25,7 +25,7 @@ if [ ! "$(echo ${configPath}.stylelintrc*)" != "${configPath}.stylelintrc*" ]; t
   echo "{
   \"extends\": \"stylelint-config-standard\",
   \"rules\": {
-    \"indentation\": "$indentSpaces"
+    \"indentation\": $indentSpaces
   }
 }" > .stylelintrc
 fi
