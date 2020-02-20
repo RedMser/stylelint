@@ -19,7 +19,8 @@ fi
 stylelint_path="node_modules/.bin/stylelint"
 if [ ! -e stylelint_path ]; then
   echo "${stylelint_path} not found, add via yarn"
-  yarn add stylelint stylelint-config-standard --silent
+  rm .yarnclean || true
+  yarn add stylelint stylelint-config-standard --silent --frozen-lockfile --ignore-engines --ignore-optional --no-bin-links --non-interactive --ignore-scripts --production=false
 fi
 
 if [ ! "$(echo ${configPath}.stylelintrc*)" != "${configPath}.stylelintrc*" ]; then
